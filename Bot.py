@@ -12,6 +12,10 @@ bot_prefix = "#"
 bot = command.Bot(command_prefix=bot_prefix)
 
 @bot.event
+async def on_ready():
+	print("bot is ready")
+
+@bot.event
 async def on_message(message):
 	if message.author.id != bot.user.id:
 		await bot.say("TEST!")
